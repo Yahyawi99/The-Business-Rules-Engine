@@ -1,7 +1,9 @@
 package engine;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+
+import static org.mockito.Mockito.*;
 
 public class BusinessRuleEngineTest {
 
@@ -22,5 +24,20 @@ public class BusinessRuleEngineTest {
     });
 
     assertEquals(2, businessRuleEngine.count());
+  }
+
+  @Test
+  void shouldExecuteOneAction() {
+    final BusinessRuleEngine businessRuleEngine = new BusinessRuleEngine();
+
+    final Action mockAction = mock(Action.class);
+
+    // When
+    businessRuleEngine.addAction(mockAction);
+    businessRuleEngine.run();
+
+    // Then
+    verify(mockAction).execute();
+
   }
 }

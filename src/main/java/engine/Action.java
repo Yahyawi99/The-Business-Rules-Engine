@@ -2,5 +2,5 @@ package engine;
 
 @FunctionalInterface
 public interface Action {
-  void excute();
+  void execute();
 }
