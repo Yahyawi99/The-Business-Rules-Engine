@@ -9,35 +9,39 @@ public class BusinessRuleEngineTest {
 
   @Test
   void shouldHaveNoRulesInitially() {
-    final BusinessRuleEngine businessRuleEngine = new BusinessRuleEngine();
+    final Facts mockFacts = mock(Facts.class);
+
+    final BusinessRuleEngine businessRuleEngine = new BusinessRuleEngine(mockFacts);
 
     assertEquals(0, businessRuleEngine.count());
   }
 
   @Test
   void shouldAddTwoActions() {
-    final BusinessRuleEngine businessRuleEngine = new BusinessRuleEngine();
+    final Facts mockFacts = mock(Facts.class);
+    final Action mockAction = mock(Action.class);
 
-    businessRuleEngine.addAction(() -> {
-    });
-    businessRuleEngine.addAction(() -> {
-    });
+    final BusinessRuleEngine businessRuleEngine = new BusinessRuleEngine(mockFacts);
+
+    businessRuleEngine.addAction(mockAction);
+    businessRuleEngine.addAction(mockAction);
 
     assertEquals(2, businessRuleEngine.count());
   }
 
   @Test
-  void shouldExecuteOneAction() {
-    final BusinessRuleEngine businessRuleEngine = new BusinessRuleEngine();
-
+  void shouldExecuteAnActionWithFacts() {
     final Action mockAction = mock(Action.class);
+    final Facts mockFacts = mock(Facts.class);
+
+    final BusinessRuleEngine businessRuleEngine = new BusinessRuleEngine(mockFacts);
 
     // When
     businessRuleEngine.addAction(mockAction);
     businessRuleEngine.run();
 
     // Then
-    verify(mockAction).execute();
+    verify(mockAction).execute(mockFacts);
 
   }
 }
