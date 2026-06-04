@@ -1,4 +1,10 @@
+package engine;
+
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
 public class BusinessRuleEngineTest {
+
   @Test
   void shouldHaveNoRulesInitially() {
     final BusinessRuleEngine businessRuleEngine = new BusinessRuleEngine();
@@ -10,8 +16,10 @@ public class BusinessRuleEngineTest {
   void shouldAddTwoActions() {
     final BusinessRuleEngine businessRuleEngine = new BusinessRuleEngine();
 
-    businessRuleEngine.addAction(()=>{});
-    businessRuleEngine.addAction(()=>{});
+    businessRuleEngine.addAction(() -> {
+    });
+    businessRuleEngine.addAction(() -> {
+    });
 
     assertEquals(2, businessRuleEngine.count());
   }
