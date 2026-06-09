@@ -20,6 +20,18 @@ public class Application {
       facts.addFacts("forecastedAmount", String.valueOf(forecastedAmount));
     });
 
+    // Builder pattern
+    mockfacts.addFacts("jobTitle", "CEO");
+    mockfacts.addFacts("name", "YY");
+
+    final Rule rule = new RuleBuilder()
+        .when(facts -> "CEO".equals(mockfacts.getFacts("jobTitle")))
+        .then(facts -> {
+          facts.getFacts("name");
+          // send mail using the name
+        })
+        .createRule();
+
   }
 
 }
