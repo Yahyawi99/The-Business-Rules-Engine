@@ -1,3 +1,8 @@
 /home/yassine/Documents/repos/The-Business-Rules-Engine/src/main/java/engine/Action.java
+/home/yassine/Documents/repos/The-Business-Rules-Engine/src/main/java/engine/Application.java
 /home/yassine/Documents/repos/The-Business-Rules-Engine/src/main/java/engine/BusinessRuleEngine.java
+/home/yassine/Documents/repos/The-Business-Rules-Engine/src/main/java/engine/ConditionalAction.java
 /home/yassine/Documents/repos/The-Business-Rules-Engine/src/main/java/engine/Facts.java
+/home/yassine/Documents/repos/The-Business-Rules-Engine/src/main/java/engine/Inspector.java
+/home/yassine/Documents/repos/The-Business-Rules-Engine/src/main/java/engine/Report.java
+/home/yassine/Documents/repos/The-Business-Rules-Engine/src/main/java/engine/Stage.java
